@@ -12,4 +12,9 @@ class PostController extends Controller
         return view('posts/index')->with(['posts' => $post->getPaginateByLimit()]);
         // withメソッド:controller内で取得した変数を渡す　変数名 => 値
     }
+    
+    public function show(Post $post)
+    {
+        return view('posts/show')->with(['post' => $post]);
+    }
 }
